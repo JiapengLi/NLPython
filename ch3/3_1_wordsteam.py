@@ -2,7 +2,9 @@
 # It is part of morphological analysis
 
 from nltk.stem import PorterStemmer
-from polyglot.text import Text, Word
+from polyglot.text import Word
+from polyglot.detect import Detector
+from polyglot.utils import pretty_list
 
 word = "unexpected"
 text = "disagreement"
@@ -21,37 +23,54 @@ words = ["unexpected", "disagreement", "disagree", "agreement", "quirkiness", "c
 
 def stemmer_porter():
     port = PorterStemmer()
-    print "\nDerivational Morphemes"
-    print " ".join([port.stem(i) for i in text6.split()])
-    print " ".join([port.stem(i) for i in text7.split()])
-    print "\nInflectional  Morphemes"
-    print " ".join([port.stem(i) for i in text8.split()])
-    print " ".join([port.stem(i) for i in text9.split()])
-    print "\nSome examples"
-    print " ".join([port.stem(i) for i in word.split()])
-    print " ".join([port.stem(i) for i in text.split()])
-    print " ".join([port.stem(i) for i in text1.split()])
-    print " ".join([port.stem(i) for i in text2.split()])
-    print " ".join([port.stem(i) for i in text3.split()])
-    print " ".join([port.stem(i) for i in text4.split()])
-    print " ".join([port.stem(i) for i in text5.split()])
+
+    print(text6.split())
+    print([port.stem(i) for i in text6.split()])
+    print(port.stem("happiness"))
+
+    print("\nDerivational Morphemes")
+    print(" ".join([port.stem(i) for i in text6.split()]))
+    print(" ".join([port.stem(i) for i in text7.split()]))
+    print("\nInflectional  Morphemes")
+    print(" ".join([port.stem(i) for i in text8.split()]))
+    print(" ".join([port.stem(i) for i in text9.split()]))
+    print("\nSome examples")
+    print(" ".join([port.stem(i) for i in word.split()]))
+    print(" ".join([port.stem(i) for i in text.split()]))
+    print(" ".join([port.stem(i) for i in text1.split()]))
+    print(" ".join([port.stem(i) for i in text2.split()]))
+    print(" ".join([port.stem(i) for i in text3.split()]))
+    print(" ".join([port.stem(i) for i in text4.split()]))
+    print(" ".join([port.stem(i) for i in text5.split()]))
 
 
 def polyglot_stem():
-    print "\nDerivational Morphemes using polyglot library"
+    print("\nDerivational Morphemes using polyglot library")
     for w in words_derv:
         w = Word(w, language="en")
         print("{:<20}{}".format(w, w.morphemes))
-    print "\nInflectional Morphemes using polyglot library"
+    print("\nInflectional Morphemes using polyglot library")
     for w in word_infle:
         w = Word(w, language="en")
         print("{:<20}{}".format(w, w.morphemes))
-    print "\nSome Morphemes examples using polyglot library"
-    for w in word_infle:
+    print("\nSome Morphemes examples using polyglot library")
+    for w in words:
         w = Word(w, language="en")
         print("{:<20}{}".format(w, w.morphemes))
 
+mixed_text = u"""
+China (simplified Chinese: 中国; traditional Chinese: 中國),
+officially the People's Republic of China (PRC), is a sovereign state located in East Asia.
+"""
 
 if __name__ == "__main__":
     stemmer_porter()
     polyglot_stem()
+
+    print("\n----------")
+    for language in Detector(mixed_text).languages:
+        print(language)
+
+    print("\n----------")
+
+    print(Detector.supported_languages())

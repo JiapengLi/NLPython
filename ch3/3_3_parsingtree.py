@@ -23,7 +23,7 @@ def definegrammar_pasrereult():
     parser = nltk.ChartParser(Grammar)
     trees = parser.parse(sent)
     for tree in trees:
-        print tree
+        print(tree)
 
 # Part 2: Draw the parse tree
 def draw_parser_tree():
@@ -40,19 +40,21 @@ def draw_parser_tree():
 # you need to install pycorenlp as well as you need to download stanford-corenlp-full-* from standford corenlp website.
 def stanford_parsing_result():
     text =""" I shot an elephant. The dog chased the cat. School go to boy. """
-    nlp = StanfordCoreNLP('http://localhost:9000')
+    nlp = StanfordCoreNLP('http://0.0.0.0:9000')
+    print(nlp.__dict__)
     res = nlp.annotate(text, properties={
         'annotators': 'tokenize,ssplit,pos,depparse,parse',
         'outputFormat': 'json'
     })
-    print(res['sentences'][0]['parse'])
-    print(res['sentences'][2]['parse'])
-
+    # print(res['sentences'][0]['parse'])
+    # print(res['sentences'][2]['parse'])
+    # print(res.__dict__)
+    print(res)
 
 if __name__ == "__main__":
-    print "\n--------Parsing result as per defined grammar-------"
+    print("\n--------Parsing result as per defined grammar-------")
     definegrammar_pasrereult()
-    print "\n--------Drawing Parse Tree-------"
+    print("\n--------Drawing Parse Tree-------")
     draw_parser_tree()
-    print "\n--------Stanford Parser result------"
+    print("\n--------Stanford Parser result------")
     stanford_parsing_result()
