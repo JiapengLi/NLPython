@@ -11,7 +11,7 @@ from sklearn.metrics import classification_report
 
 def usage():
     print("Usage:")
-    print("python %s <data_dir>" % sys.argv[0])
+    print(("python %s <data_dir>" % sys.argv[0]))
 
 if __name__ == '__main__':
 
@@ -79,11 +79,11 @@ if __name__ == '__main__':
 
     # Print results in a nice table
     print("Results for SVC(kernel=rbf)")
-    print("Training time: %fs; Prediction time: %fs" % (time_rbf_train, time_rbf_predict))
-    print(classification_report(test_labels, prediction_rbf))
+    print(("Training time: %fs; Prediction time: %fs" % (time_rbf_train, time_rbf_predict)))
+    print((classification_report(test_labels, prediction_rbf)))
     print("Results for SVC(kernel=linear)")
-    print("Training time: %fs; Prediction time: %fs" % (time_linear_train, time_linear_predict))
-    print(classification_report(test_labels, prediction_linear))
+    print(("Training time: %fs; Prediction time: %fs" % (time_linear_train, time_linear_predict)))
+    print((classification_report(test_labels, prediction_linear)))
     print("Results for LinearSVC()")
-    print("Training time: %fs; Prediction time: %fs" % (time_liblinear_train, time_liblinear_predict))
-    print(classification_report(test_labels, prediction_liblinear))
+    print(("Training time: %fs; Prediction time: %fs" % (time_liblinear_train, time_liblinear_predict)))
+    print((classification_report(test_labels, prediction_liblinear)))

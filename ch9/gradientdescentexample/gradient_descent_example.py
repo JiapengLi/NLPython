@@ -67,15 +67,15 @@ def run():
     # Here we are printing the initial values of b, m and error.
     # As well as there is the function compute_error_for_line_given_points()
     # which compute the errors for given point
-    print "Starting gradient descent at b = {0}, m = {1}, error = {2}".format(initial_b, initial_m,
-                                                                              compute_error_for_line_given_points(initial_b, initial_m, points))
-    print "Running..."
+    print("Starting gradient descent at b = {0}, m = {1}, error = {2}".format(initial_b, initial_m,
+                                                                              compute_error_for_line_given_points(initial_b, initial_m, points)))
+    print("Running...")
 
     # By using this gradient_descent_runner() function we will actually calculate gradient descent
     [b, m] = gradient_descent_runner(points, initial_b, initial_m, learning_rate, num_iterations)
 
     # Here we are printing the values of b, m and error after getting the line of best fit for the given dataset.
-    print "After {0} iterations b = {1}, m = {2}, error = {3}".format(num_iterations, b, m, compute_error_for_line_given_points(b, m, points))
+    print("After {0} iterations b = {1}, m = {2}, error = {3}".format(num_iterations, b, m, compute_error_for_line_given_points(b, m, points)))
 
 if __name__ == '__main__':
     run()

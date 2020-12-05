@@ -31,7 +31,7 @@ if __name__ == "__main__":
     print(filecontentdetails)
     # sentence tokenizer
     st_list_rawfile = st(filecontentdetails)
-    print(len(st_list_rawfile))
+    print((len(st_list_rawfile)))
 
     print("")
     print("-------Output from assigned variable-------")
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     print(localveriabledata)
     # sentence tokenizer
     st_list_local = st(localveriabledata)
-    print(len(st_list_local))
+    print((len(st_list_local)))
     print(st_list_local)
 
     print("")
@@ -50,4 +50,4 @@ if __name__ == "__main__":
     print(fromcorpusdata)
     # sentence tokenizer
     st_list_corpus = st(fromcorpusdata)
-    print(len(st_list_corpus))
+    print((len(st_list_corpus)))

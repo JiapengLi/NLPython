@@ -38,7 +38,7 @@ def edits2(word):
 
 
 if __name__ == "__main__":
-    print correction('aple')
-    print correction('correcton')
-    print correction('statament')
-    print correction('tutpore')
+    print(correction('aple'))
+    print(correction('correcton'))
+    print(correction('statament'))
+    print(correction('tutpore'))

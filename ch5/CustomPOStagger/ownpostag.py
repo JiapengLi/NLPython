@@ -10,7 +10,7 @@ from sklearn.pipeline import Pipeline
 
 #tagged_sentences = nltk.corpus.brown.tagged_sents()
 tagged_sentences = nltk.corpus.treebank.tagged_sents()
-print tagged_sentences[0]
+print(tagged_sentences[0])
 
 # print "Tagged sentences: ", len(tagged_sentences)
 # print "Tagged words:", len(nltk.corpus.treebank.tagged_words())
@@ -66,17 +66,17 @@ clf = Pipeline([
 clf.fit(X[:10000],
         y[:10000])  # Use only the first 10K samples if you're running it multiple times. It takes a fair bit :)
 
-print 'Training completed'
+print('Training completed')
 
 X_test, y_test = transform_to_dataset(test_sentences)
 
-print "Accuracy:", clf.score(X_test, y_test)
+print("Accuracy:", clf.score(X_test, y_test))
 
 
 def pos_tag(sentence):
     tagged_sentence = []
     tags = clf.predict([features(sentence, index) for index in range(len(sentence))])
-    return zip(sentence, tags)
+    return list(zip(sentence, tags))
 
 
-print pos_tag(word_tokenize('This is my friend, John.'))
+print(pos_tag(word_tokenize('This is my friend, John.')))

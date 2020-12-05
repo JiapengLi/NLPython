@@ -17,7 +17,7 @@ def rulelogic(filecontent):
                     if word[0].isupper():
                         programminglanguagelist.append(word)
                         # print programminglanguagelist
-        print programminglanguagelist
+        print(programminglanguagelist)
 
 def scrapdata():
     url = 'https://en.wikipedia.org/wiki/Programming_language'

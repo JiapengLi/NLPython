@@ -69,7 +69,7 @@ for subdir, dirs, files in os.walk(path):
 
 # this can take some time
 tfidf = TfidfVectorizer(tokenizer=tokenize, stop_words='english')
-tfs = tfidf.fit_transform(token_dict.values())
+tfs = tfidf.fit_transform(list(token_dict.values()))
 
 str = 'this sentence has unseen text such as computer but also king lord juliet'
 response = tfidf.transform([str])
@@ -78,15 +78,15 @@ response = tfidf.transform([str])
 
 feature_names = tfidf.get_feature_names()
 for col in response.nonzero()[1]:
-    print feature_names[col], ' - ', response[0, col]
+    print(feature_names[col], ' - ', response[0, col])
 
 
 feature_array = np.array(tfidf.get_feature_names())
 tfidf_sorting = np.argsort(response.toarray()).flatten()[::-1]
 n = 3
 top_n = feature_array[tfidf_sorting][:n]
-print top_n
+print(top_n)
 
 n = 4
 top_n = feature_array[tfidf_sorting][:n]
-print top_n
+print(top_n)

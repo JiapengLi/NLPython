@@ -11,7 +11,7 @@ from sklearn.metrics import classification_report
 
 def usage():
     print("Usage:")
-    print("python %s <data_dir>" % sys.argv[0])
+    print(("python %s <data_dir>" % sys.argv[0]))
 
 if __name__ == '__main__':
 
@@ -61,10 +61,10 @@ if __name__ == '__main__':
 
     # Print results in a nice table
     print("Results for NaiveBayes (MultinomialNB) ")
-    print("Training time: %fs; Prediction time: %fs" % (time_train, time_predict))
-    print(classification_report(test_labels, prediction))
-    print "Reviews Prediction"
-    print prediction[10] + "----"+test_data[10]
+    print(("Training time: %fs; Prediction time: %fs" % (time_train, time_predict)))
+    print((classification_report(test_labels, prediction)))
+    print("Reviews Prediction")
+    print(prediction[10] + "----"+test_data[10])
 
-    print "\nReviews Prediction"
-    print prediction[100] + "----" + test_data[100]
+    print("\nReviews Prediction")
+    print(prediction[100] + "----" + test_data[100])

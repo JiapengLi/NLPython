@@ -53,7 +53,7 @@ class NeuralNetwork():
         deltas[self.num_layers] = output[self.num_layers] - target
 
         # Delta of hidden Layers
-        for layer in reversed(range(2, self.num_layers)):  # All layers except input/output
+        for layer in reversed(list(range(2, self.num_layers))):  # All layers except input/output
             a_val = output[layer]
             weights = self.weights[layer][:-1, :]
             prev_deltas = deltas[layer+1]
@@ -113,7 +113,7 @@ if __name__ == "__main__":
     training_labels = np.asarray([[0], [1], [1], [0]])
 
     error, iteration = nn.train(training_data, training_labels, 5000)
-    print('Error = ', np.mean(error[-4:]))
-    print('Epoches needed to train = ', iteration)
+    print(('Error = ', np.mean(error[-4:])))
+    print(('Epoches needed to train = ', iteration))
 
     # nn.predict(testing_data)
