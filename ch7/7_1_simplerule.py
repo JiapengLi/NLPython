@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 
 def savedatainfile(filecontent):
-    file = open("/home/jalaj/PycharmProjects/NLPython/NLPython/data/simpleruledata.txt", "a+")
+    file = open("./data/simpleruledata.txt", "a+")
     file.write(filecontent + "\n")
     file.close()
 
@@ -28,7 +28,7 @@ def scrapdata():
     for para in paragraphs:
         paraexport = para.text.encode('utf-8')
         savedatainfile(paraexport)
-    rulelogic("/home/jalaj/PycharmProjects/NLPython/NLPython/data/simpleruledata.txt")
+    rulelogic("./data/simpleruledata.txt")
 
 
 if __name__ == "__main__":

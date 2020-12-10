@@ -5,7 +5,7 @@ from nltk.tokenize import sent_tokenize as st
 
 # Get raw data form file
 def fileread():
-    file_contents = open("../data/rawtextcorpus.txt", "r").read()
+    file_contents = open("./data/rawtextcorpus.txt", "r").read()
     # print(file_contents)
     return file_contents
 # assign text data to local variable

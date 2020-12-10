@@ -12,7 +12,7 @@ from nltk.corpus import stopwords
 
 
 def get_tokens():
-   with open('/home/jalaj/PycharmProjects/NLPython/NLPython/ch5/TFIDFdemo/shakes/shakes1.txt', 'r') as shakes:
+   with open('./ch5/TFIDFdemo/shakes/shakes1.txt', 'r') as shakes:
     text = shakes.read()
     lowers = text.lower()
     #remove the punctuation using the character deletion step of translate
@@ -40,7 +40,7 @@ stemmed = stem_tokens(filtered, stemmer)
 count = Counter(stemmed)
 #print count.most_common(100)
 
-path = '/home/jalaj/PycharmProjects/NLPython/NLPython/ch5/TFIDFdemo/shakes'
+path = './ch5/TFIDFdemo/shakes'
 token_dict = {}
 stemmer = PorterStemmer()
 

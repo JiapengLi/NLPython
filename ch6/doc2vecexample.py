@@ -14,15 +14,15 @@ dm = 0  # 0 = dbow; 1 = dmpv
 worker_count = 1  # number of parallel processes
 
 # pretrained word embeddings
-pretrained_emb = "/home/jalaj/PycharmProjects/NLPython/NLPython/ch6/doc2vecdata/pretrained_word_embeddings.txt"
+pretrained_emb = "./ch6/doc2vecdata/pretrained_word_embeddings.txt"
 
 # None if use without pretrained embeddings
 
 # input corpus
-train_corpus = "/home/jalaj/PycharmProjects/NLPython/NLPython/ch6/doc2vecdata/train_docs.txt"
+train_corpus = "./ch6/doc2vecdata/train_docs.txt"
 
 # output model
-saved_path = "/home/jalaj/PycharmProjects/NLPython/NLPython/ch6/doc2vecdata/model.bin"
+saved_path = "./ch6/doc2vecdata/model.bin"
 
 # enable logging
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
@@ -40,9 +40,9 @@ print("training is over....!\n")
 
 print("testing started....!\n")
 #parameters
-model="/home/jalaj/PycharmProjects/NLPython/NLPython/ch6/doc2vecdata/model.bin"
-test_docs="/home/jalaj/PycharmProjects/NLPython/NLPython/ch6/doc2vecdata/test_docs.txt"
-output_file="/home/jalaj/PycharmProjects/NLPython/NLPython/ch6/doc2vecdata/test_vectors.txt"
+model="./ch6/doc2vecdata/model.bin"
+test_docs="./ch6/doc2vecdata/test_docs.txt"
+output_file="./ch6/doc2vecdata/test_vectors.txt"
 
 #inference hyper-parameters
 start_alpha=0.01

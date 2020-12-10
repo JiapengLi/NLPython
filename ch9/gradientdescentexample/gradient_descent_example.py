@@ -46,7 +46,7 @@ def run():
     # Step 1 : Read data
 
     # genfromtext is used to read out data from data.csv file.
-    points = genfromtxt("/home/jalaj/PycharmProjects/NLPython/NLPython/ch9/gradientdescentexample/data.csv", delimiter=",")
+    points = genfromtxt("./ch9/gradientdescentexample/data.csv", delimiter=",")
 
     # Step2 : Define certain hyperparameters
 
